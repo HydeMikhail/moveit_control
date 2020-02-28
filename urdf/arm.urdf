@@ -27,8 +27,10 @@
 
     <!--  BASE JOINT  -->
     <joint name="base_joint" type="continuous">
-    <parent link="world"/>
-    <child link="base_link"/>
+        <parent link="world"/>
+        <child link="base_link"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
     </joint>
 
     <!--  MAIN ARM LINK  -->
@@ -134,10 +136,10 @@
     <transmission name="base_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="base_joint">
-            <hardwareInterface>hardwareInterface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
         </joint>
         <actuator name="base_motor">
-            <hardwareInterface>hardwareInterface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
@@ -146,10 +148,10 @@
     <transmission name="main_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="main_joint">
-            <hardwareInterface>hardwareInterface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
         </joint>
         <actuator name="main_motor">
-            <hardwareInterface>hardwareInterface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
@@ -158,10 +160,10 @@
     <transmission name="sec_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="sec_joint">
-            <hardwareInterface>hardwareInterface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
         </joint>
         <actuator name="sec_motor">
-            <hardwareInterface>hardwareInterface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
@@ -170,10 +172,10 @@
     <transmission name="tool_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="tool_joint">
-            <hardwareInterface>hardwareInterface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
         </joint>
         <actuator name="tool_motor">
-            <hardwareInterface>hardwareInterface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
