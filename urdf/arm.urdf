@@ -136,10 +136,10 @@
     <transmission name="base_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="base_joint">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="base_motor">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
@@ -148,10 +148,10 @@
     <transmission name="main_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="main_joint">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="main_motor">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
@@ -160,10 +160,10 @@
     <transmission name="sec_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="sec_joint">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="sec_motor">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
@@ -172,10 +172,10 @@
     <transmission name="tool_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="tool_joint">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="tool_motor">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
@@ -183,6 +183,12 @@
     <gazebo>
         <plugin name="control" filename="libgazebo_ros_control.so">
             <robotNamespace>/arm</robotNamespace>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+            <joint_name>base_joint,main_joint,sec_joint,tool_joint</joint_name>
         </plugin>
     </gazebo>
 
