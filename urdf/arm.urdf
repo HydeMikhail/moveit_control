@@ -181,14 +181,12 @@
     </transmission>
 
     <gazebo>
-        <plugin name="control" filename="libgazebo_ros_control.so">
-            <robotNamespace>/arm</robotNamespace>
-        </plugin>
+        <plugin name="control" filename="libgazebo_ros_control.so"/>
     </gazebo>
 
     <gazebo>
         <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
-            <joint_name>base_joint,main_joint,sec_joint,tool_joint</joint_name>
+            <jointName>base_joint,main_joint,sec_joint,tool_joint</jointName>
         </plugin>
     </gazebo>
 
